@@ -9,7 +9,7 @@ export const FormProvider = ({ children }) => {
 
 
       const [formData, setFormData] = useState({
-            firstName: '',
+            fullName: '',
             email: '',
             phone: '',
             password: '',
