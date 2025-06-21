@@ -1,5 +1,4 @@
 
-import React from 'react';
 import InputField from '../components/InputField';
 import { useForm } from '../context/FormContext';
 import { validatePersonalInformation } from '../utils/validation';

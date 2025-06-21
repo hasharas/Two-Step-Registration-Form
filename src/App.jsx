@@ -23,11 +23,30 @@ function App() {
 
         <div className='w-full max-w-md mx-auto'>
           <StepIndicator currentStep={currentStep} />
+          {submissionStatus === 'success' && (
+            <div
+              className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg mb-6 shadow-md"
+              role="alert"
+            >
+              <p className="font-bold">Success!</p>
+              <p>Your registration was successful. Welcome aboard!</p>
+            </div>
+          )}
+          {submissionStatus === 'error' && (
+            <div
+              className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg mb-6 shadow-md"
+              role="alert"
+            >
+              <p className="font-bold">Error!</p>
+              <p>Registration failed. Please check your details and try again.</p>
+            </div>
+          )}
+
+
+
+          {currentStep === 1 && < PersonalInformation />}
+          {currentStep === 2 && <Security />}
         </div>
-
-
-        {currentStep === 1 && < PersonalInformation />}
-        {currentStep === 2 && <Security />}
       </div>
     </>
   )
