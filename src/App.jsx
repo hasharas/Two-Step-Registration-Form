@@ -22,6 +22,7 @@ function App() {
       <div className='min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans antialiased'>
 
         <div className='w-full max-w-md mx-auto'>
+          {/* <p className='text-2xl flex  justify-center py-6  font-bold text-center'>Two-Step Registration Form</p> */}
           <StepIndicator currentStep={currentStep} />
           {submissionStatus === 'success' && (
             <div
