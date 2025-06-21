@@ -7,7 +7,7 @@ import Security from './pages/Security'
 
 function App() {
 
-  const { currentStep, submissionStatus, setSubmissionStatus } = useForm();
+  const { currentStep, submissionStatus, setSubmissionStatus, errorMessage, setErrorMessage } = useForm();
   useEffect(() => {
     if (submissionStatus) {
       const timer = setTimeout(() => {
@@ -15,7 +15,8 @@ function App() {
       }, 5000);
       return () => clearTimeout(timer);
     }
-  }, [submissionStatus, setSubmissionStatus]);
+  }, [submissionStatus, setSubmissionStatus, setErrorMessage]);
+  // console.log('Rendered errorMessage:', errorMessage);
 
   return (
     <>
@@ -34,14 +35,14 @@ function App() {
             </div>
           )}
 
-          {/* //error message hare */}
+          {/* //error message hare with srver err */}
           {submissionStatus === 'error' && (
             <div
               className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg mb-6 shadow-md"
               role="alert"
             >
               <p className="font-bold">Error!</p>
-              <p>Registration failed. Please check your details and try again.</p>
+              <p>{errorMessage || `Registration failed. Please check your details and try again.`}</p>
             </div>
           )}
 

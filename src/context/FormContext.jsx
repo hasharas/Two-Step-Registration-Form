@@ -19,7 +19,9 @@ export const FormProvider = ({ children }) => {
       const [errors, setErrors] = useState({});
       const [currentStep, setCurrentStep] = useState(1);
       const [isLoading, setIsLoading] = useState(false);
-      const [submitionStatus, setSubmissionStatus] = useState(null);
+      const [submissionStatus, setSubmissionStatus] = useState(null);
+      const [errorMessage, setErrorMessage] = useState('');
+
 
       const handleInputChange = (e) => {
             const { name, value } = e.target;
@@ -52,6 +54,7 @@ export const FormProvider = ({ children }) => {
             if (Object.keys(currentStepErrors).length === 0) {
                   setIsLoading(true);
                   setSubmissionStatus(null);
+                  setErrorMessage('');
                   try {
                         const payload = {
                               fullName: formData.fullName,
@@ -72,7 +75,8 @@ export const FormProvider = ({ children }) => {
                         setCurrentStep(1);
                   } catch (err) {
                         setSubmissionStatus('error');
-                        console.error('Submission error:', err);
+                        setErrorMessage(err.message);
+                        console.error(err);
                   } finally {
                         setIsLoading(false);
                   }
@@ -85,12 +89,15 @@ export const FormProvider = ({ children }) => {
                   currentStep,
                   errors,
                   isLoading,
-                  submitionStatus,
+                  submissionStatus,
+                  errorMessage,
                   handleInputChange,
                   nextStep,
                   handleSubmit,
                   setCurrentStep,
                   setSubmissionStatus,
+                  setErrorMessage,
+
             }}>
                   {children}
             </FormContext.Provider>
