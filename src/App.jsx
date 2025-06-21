@@ -1,5 +1,6 @@
 
 import './App.css'
+import StepIndicator from './components/StepIndicator'
 
 function App() {
 
@@ -8,7 +9,7 @@ function App() {
     <>
       <div className='fixe'>
 
-
+        <StepIndicator />
       </div>
     </>
   )
