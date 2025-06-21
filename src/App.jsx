@@ -1,7 +1,7 @@
 
-import { useEffect, FormProvider } from 'react';
+import { useEffect } from 'react';
+import { FormProvider, useForm } from './context/FormContext';
 import StepIndicator from './components/StepIndicator'
-import { useForm } from './context/FormContext';
 import PersonalInformation from './pages/PersonalInformation'
 import Security from './pages/Security'
 
@@ -41,8 +41,6 @@ function App() {
               <p>Registration failed. Please check your details and try again.</p>
             </div>
           )}
-
-
 
           {currentStep === 1 && < PersonalInformation />}
           {currentStep === 2 && <Security />}

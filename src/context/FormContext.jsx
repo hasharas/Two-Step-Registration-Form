@@ -5,7 +5,7 @@ import { validatePersonalInformation } from '../utils/validation';
 
 const FormContext = createContext();
 
-export const FormProvider = () => {
+export const FormProvider = ({ children }) => {
 
 
       const [formData, setFormData] = useState({
@@ -90,7 +90,7 @@ export const FormProvider = () => {
                   setCurrentStep,
                   setSubmissionStatus,
             }}>
-                  {Children}
+                  {children}
             </FormContext.Provider>
       );
 }
