@@ -1,5 +1,3 @@
-import React from 'react';
-
 
 //step indicator component
 const StepIndicator = ({ currentStep }) => {

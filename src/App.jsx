@@ -1,7 +1,12 @@
 
 import StepIndicator from './components/StepIndicator'
+import { userForm } from './context/FormContext';
+import PersonalInformation from './pages/PersonalInformation'
+import Security from './pages/Security'
 
 function App() {
+
+  const { currentStep } = userForm();
 
 
   return (
@@ -9,9 +14,10 @@ function App() {
       <div className='min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans antialiased'>
 
         <div className='w-full max-w-md mx-auto'>
-          <StepIndicator />
+          <StepIndicator currentStep={currentStep} />
         </div>
-        <span className='tx bg-red-800 w-5 text-4xl text-green-600'>text</span>
+        <PersonalInformation />
+        <Security />
       </div>
     </>
   )
