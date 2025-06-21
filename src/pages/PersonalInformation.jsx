@@ -22,7 +22,7 @@ const PersonalInformation = () => {
                               value={formData.fullName}
                               onChange={handleInputChange}
                               error={errors.fullName}
-                              placeholder="John Doe"
+                              placeholder="Your Full Name"
                         />
                         <InputField
                               label="Email"
@@ -31,7 +31,7 @@ const PersonalInformation = () => {
                               value={formData.email}
                               onChange={handleInputChange}
                               error={errors.email}
-                              placeholder="john.doe@example.com"
+                              placeholder="name@example.com"
                         />
                         <InputField
                               label="Phone Number (Optional)"

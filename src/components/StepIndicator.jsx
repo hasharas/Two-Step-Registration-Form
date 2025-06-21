@@ -16,8 +16,9 @@ const StepIndicator = ({ currentStep }) => {
                   <div className={`flex items-center ${currentStep === 2 ? 'text-blue-600' : 'text-gray-500'}`}>
                         <div className={`rounded-full ${currentStep === 2 ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'} w-8 h-8 flex items-center justify-center font-bold text-sm`}>
                               2
-                              <span className="ml-2 font-medium">Security</span>
+
                         </div>
+                        <span className="ml-2 font-medium">Security</span>
                   </div>
             </div>
       );
