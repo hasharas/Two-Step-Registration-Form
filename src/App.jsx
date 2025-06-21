@@ -33,6 +33,8 @@ function App() {
               <p>Your registration was successful. Welcome aboard!</p>
             </div>
           )}
+
+          {/* //error message hare */}
           {submissionStatus === 'error' && (
             <div
               className="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg mb-6 shadow-md"

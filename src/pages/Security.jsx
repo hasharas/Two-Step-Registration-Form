@@ -27,15 +27,17 @@ const Security = () => {
                               onChange={handleInputChange}
                               error={errors.password}
                               placeholder='Minimum 6 characters'
+
                         />
                         <InputField
                               label='Confirm Password'
                               type='password'
-                              name='password'
+                              name='confirmPassword'
                               value={formData.confirmPassword}
                               onChange={handleInputChange}
                               error={errors.confirmPassword}
                               placeholder='Confirm your password'
+
                         />
 
                         <div className='flex justify-between mt-6'>

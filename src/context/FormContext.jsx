@@ -1,5 +1,6 @@
-import React, { Children, createContext, useContext, useState } from 'react';
-import { validatePersonalInformation } from '../utils/validation';
+import { createContext, useContext, useState } from 'react';
+import { validatePersonalInformation, validateSecurityInformation } from '../utils/validation';
+import { registerUser } from '../services/registerService';
 
 
 
@@ -22,6 +23,7 @@ export const FormProvider = ({ children }) => {
 
       const handleInputChange = (e) => {
             const { name, value } = e.target;
+
             setFormData((prevData) => ({ ...prevData, [name]: value }));
             if (errors[name]) {
                   setErrors((prevErrors) => {
@@ -49,7 +51,7 @@ export const FormProvider = ({ children }) => {
 
             if (Object.keys(currentStepErrors).length === 0) {
                   setIsLoading(true);
-                  setSubmissionStatus(null); tatus
+                  setSubmissionStatus(null);
                   try {
                         const payload = {
                               fullName: formData.fullName,
