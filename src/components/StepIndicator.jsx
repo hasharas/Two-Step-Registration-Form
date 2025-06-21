@@ -3,6 +3,7 @@
 const StepIndicator = ({ currentStep }) => {
 
 
+
       return (
             <div className=" mb-8 flex items-center justify-center">
                   <div className={`flex items-center ${currentStep === 1 ? 'text-blue-600' : 'text-gray-500'}`}>

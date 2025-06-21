@@ -1,13 +1,21 @@
 
+import { useEffect, FormProvider } from 'react';
 import StepIndicator from './components/StepIndicator'
-import { userForm } from './context/FormContext';
+import { useForm } from './context/FormContext';
 import PersonalInformation from './pages/PersonalInformation'
 import Security from './pages/Security'
 
 function App() {
 
-  const { currentStep } = userForm();
-
+  const { currentStep, submissionStatus, setSubmissionStatus } = useForm();
+  useEffect(() => {
+    if (submissionStatus) {
+      const timer = setTimeout(() => {
+        setSubmissionStatus(null);
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [submissionStatus, setSubmissionStatus]);
 
   return (
     <>
@@ -16,8 +24,10 @@ function App() {
         <div className='w-full max-w-md mx-auto'>
           <StepIndicator currentStep={currentStep} />
         </div>
-        <PersonalInformation />
-        <Security />
+
+
+        {currentStep === 1 && < PersonalInformation />}
+        {currentStep === 2 && <Security />}
       </div>
     </>
   )
