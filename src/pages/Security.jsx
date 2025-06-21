@@ -16,13 +16,13 @@ const Security = () => {
             Object.keys(validateSecurityInformation(formData)).length === 0;
 
       return (
-            <div className=''>
-                  <h2>Security Information</h2>
-                  <form action="" onSubmit={(e) => e.preventDefault()}>
+            <div className='p-6 bg-white rounded-xl shadow-md'>
+                  <h2 className='text-2xl font-bold text-gray-800 mb-6 text-center'>Security Information</h2>
+                  <form action="" onSubmit={(e) => e.preventDefault()} className=''>
                         <InputField
                               label='Password'
-                              type='Password'
-                              name='Password'
+                              type='password'
+                              name='password'
                               value={formData.password}
                               onChange={handleInputChange}
                               error={errors.password}
@@ -38,20 +38,23 @@ const Security = () => {
                               placeholder='Confirm your password'
                         />
 
-                        <div>
+                        <div className='flex justify-between mt-6'>
                               <button
                                     type='button'
                                     onClick={() => setCurrentStep(1)}
-                                    className=''
+                                    className='py-2 px-6 rounded-lg font-semibold bg-gray-200 text-gray-700 hover:bg-gray-300 transition duration-300 ease-in-out shadow-md'
                               >
                                     Back
                               </button>
 
                               <button
-                                    type='button'
+                                    type="button"
                                     onClick={handleSubmit}
                                     disabled={!isStep2Valid || isLoading}
-                                    className=''
+                                    className={`py-2 px-6 rounded-lg font-semibold text-white transition duration-300 ease-in-out ${isStep2Valid && !isLoading
+                                          ? 'bg-green-600 hover:bg-green-700 shadow-md hover:shadow-lg'
+                                          : 'bg-green-300 cursor-not-allowed'
+                                          }`}
                               >
                                     {isLoading ? 'Submitting...' : 'Submit'}
                               </button>
