@@ -3,9 +3,11 @@ import InputField from '../components/InputField';
 import { useForm } from '../context/FormContext';
 import { validatePersonalInformation } from '../utils/validation';
 
+
+//personal information page hare 
 const PersonalInformation = () => {
       const { formData, errors, handleInputChange, nextStep } = useForm();
-
+      //step 1 validate
       const isStep1Valid =
             formData.fullName.trim() !== '' &&
             formData.email.trim() !== '' &&

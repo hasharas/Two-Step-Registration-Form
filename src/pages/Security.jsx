@@ -2,7 +2,7 @@ import InputField from '../components/InputField';
 import { useForm } from '../context/FormContext';
 import { validateSecurityInformation } from '../utils/validation';
 
-
+//password veryfy pge hare
 const Security = () => {
 
       const { formData, errors, handleInputChange, handleSubmit, isLoading, setCurrentStep } = useForm();

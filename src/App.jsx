@@ -1,6 +1,6 @@
 
 import { useEffect } from 'react';
-import { FormProvider, useForm } from './context/FormContext';
+import { useForm } from './context/FormContext';
 import StepIndicator from './components/StepIndicator'
 import PersonalInformation from './pages/PersonalInformation'
 import Security from './pages/Security'
@@ -8,6 +8,8 @@ import Security from './pages/Security'
 function App() {
 
   const { currentStep, submissionStatus, setSubmissionStatus, errorMessage, setErrorMessage } = useForm();
+
+  // after 5 sec err msg close function 
   useEffect(() => {
     if (submissionStatus) {
       const timer = setTimeout(() => {

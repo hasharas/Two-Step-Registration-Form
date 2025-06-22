@@ -3,6 +3,7 @@ const API_BASE_URL = import.meta.env.REACT_APP_API_BASE_URL;
 
 export const registerUserApi = async (userData) => {
 
+      //fetch api 
       try {
             const response = await fetch(`${API_BASE_URL}/api/register`, {
                   method: 'POST',
@@ -14,7 +15,7 @@ export const registerUserApi = async (userData) => {
 
             if (!response.ok) {
                   const errorData = await response.json().catch(() => ({ message: 'Server error' }));
-                  throw new Error(errorData.message || 'Registration failed due to server error.');
+                  throw new Error(errorData.message || 'Registration failed ,server error.');
             }
 
             const data = await response.json();

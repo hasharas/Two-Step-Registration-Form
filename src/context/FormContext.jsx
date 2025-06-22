@@ -3,7 +3,7 @@ import { validatePersonalInformation, validateSecurityInformation } from '../uti
 import { registerUser } from '../services/registerService';
 
 
-
+//hre is context api 
 const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {

@@ -1,5 +1,6 @@
 import { registerUserApi } from '../api/registerApi';
 
+//
 export const registerUser = async (userData) => {
       console.log('User input datas:', userData);
 
