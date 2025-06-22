@@ -68,18 +68,19 @@ A responsive, multi-step user registration form built with **React** and **Tailw
 
 ## 📁 Project Structure
 ```
-├── public/ # Static assets
+├── public/                 # Static assets
 ├── src/
-│ ├── api/ # API functions (e.g., registerUser)
-│ ├── components/ # Reusable UI components (InputField, StepIndicator)
-│ ├── context/ # Global state via React Context (FormContext)
-│ ├── pages/ # Page components (PersonalInformation, Security)
-│ ├── utils/ # Validation and helper functions
-│ ├── App.jsx # Main app component
-│ └── index.js # React entry point
-├── .env # Environment variables
-├── package.json # Project metadata and dependencies
-└── README.md # Project overview and instructions
+│   ├── api/                # API functions (e.g., registerUser)
+│   ├── components/         # Reusable UI components (InputField, StepIndicator)
+│   ├── context/            # Global state via React Context (FormContext)
+│   ├── pages/              # Page components (PersonalInformation, Security)
+│   ├── service/            # Service layer (API interaction logic or helpers)
+│   ├── utils/              # Validation and helper functions
+│   ├── App.jsx             # Main app component
+│   └── index.js            # React entry point
+├── .env                    # Environment variables
+├── package.json            # Project metadata and dependencies
+└── README.md               # Project overview and instructions
 ```
 ## ⚙️ How to Run Locally
 
